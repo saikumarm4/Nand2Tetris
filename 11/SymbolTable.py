@@ -43,29 +43,29 @@ class SymbolTable:
                 
     def indexOf(self, identifier):
         
-        for name, id_type, kind, index in self._class_table:
+        for name, dummy_type, dummy_kind, index in self._class_table:
             if name == identifier:
                 return index
         
-        for name, id_type, kind, index in self._subroutine_table:
+        for name, dummy_id_type, dummy_kind, index in self._subroutine_table:
             if name == identifier:
                 return index
             
     def kindOf(self, identifier):
-        for name, id_type, kind, index in self._class_table:
+        for name, dummy_id_type, kind, dummy_id_index in self._class_table:
             if name == identifier:
                 return kind
         
-        for name, id_type, kind, index in self._subroutine_table:
+        for name, dummy_id_type, kind, dummy_id_index in self._subroutine_table:
             if name == identifier:
                 return kind
             
     def typeOf(self, identifier):
-        for name, id_type, kind, index in self._class_table:
+        for name, id_type, dummy_kind, dummy_id_index in self._class_table:
             if name == identifier:
                 return id_type
         
-        for name, id_type, kind, index in self._subroutine_table:
+        for name, id_type, dummy_kind, dummy_id_index in self._subroutine_table:
             if name == identifier:
                 return id_type
             
