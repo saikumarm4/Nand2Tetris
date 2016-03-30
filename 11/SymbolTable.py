@@ -19,10 +19,6 @@ class SymbolTable:
     
     def define(self, identifier_details):
         name, id_type, kind = identifier_details[0], identifier_details[1], identifier_details[2]
-<<<<<<< HEAD
-=======
-        
->>>>>>> origin/master
         if kind in ['static', 'field']:
             if kind == 'static':
                 self._class_table.append((name, id_type, kind, self._static_index))
@@ -31,11 +27,7 @@ class SymbolTable:
                 self._class_table.append((name, id_type, kind, self._field_index))
                 self._field_index += 1
         else:
-<<<<<<< HEAD
             if kind == 'local':
-=======
-            if kind == 'var':
->>>>>>> origin/master
                 self._subroutine_table.append((name, id_type, kind, self._var_index))
                 self._var_index += 1
             elif kind == 'argument':
@@ -58,7 +50,6 @@ class SymbolTable:
             if name == identifier:
                 return index
             
-<<<<<<< HEAD
     def kindOf(self, identifier): # kind == segment
         for name, dummy_id_type, kind, dummy_id_index in self._class_table:
             if name == identifier:
@@ -66,12 +57,6 @@ class SymbolTable:
                     return 'this'
                 else:
                     return kind 
-=======
-    def kindOf(self, identifier):
-        for name, dummy_id_type, kind, dummy_id_index in self._class_table:
-            if name == identifier:
-                return kind
->>>>>>> origin/master
         
         for name, dummy_id_type, kind, dummy_id_index in self._subroutine_table:
             if name == identifier:
@@ -93,19 +78,12 @@ class SymbolTable:
             return self._field_index
         elif kind == 'argument':
             return self._argument_index
-<<<<<<< HEAD
         elif kind == 'local':
-=======
-        elif kind == 'var':
->>>>>>> origin/master
             return self._var_index
     
     
     def printSymbolTables(self):
-<<<<<<< HEAD
         print "######################"
-=======
->>>>>>> origin/master
         print 'Class Symbol Table'
         for name, id_type, kind, index in self._class_table:
             print name, id_type, kind, index
@@ -114,8 +92,4 @@ class SymbolTable:
         
         print 'Subroutine Symbol Table'
         for name, id_type, kind, index in self._subroutine_table:
-<<<<<<< HEAD
             print name, id_type, kind, index
-=======
-            print name, id_type, kind, index
->>>>>>> origin/master

@@ -4,6 +4,7 @@ Created on Mar 7, 2016
 @author: saikumar
 '''
 import string
+import os
 
 from JackTokenizer import JackTokenizer
 from Compilation import CompliationEngine
@@ -32,7 +33,7 @@ class JackAnalyzer(object):
         compilation_engine.Compile()        
     
 def main():
-    jack_analyzer = JackAnalyzer('C:\\Users\\saikumar\\workspace\\Nand2Tetris\\11\\PongGame.jack')
+    jack_analyzer = JackAnalyzer('C:\\Users\\saikumar\\workspace\\Nand2Tetris\\11\\Main.jack')
     jack_analyzer.tokenize()
     
     
